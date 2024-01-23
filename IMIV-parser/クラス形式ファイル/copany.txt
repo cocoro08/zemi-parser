@@ -1,0 +1,37 @@
+#descripton@en "company topic"
+class ic:企業情報>ic:{@ic:実体型} ;
+
+#name"正規企業名"
+#" 国税庁法人番号公表サイトで登録されている企業名を記述するプロパティ用語"
+#description@en"A name of Corporate Number Publication Site company"
+set ic:ic:企業情報>ic:企業名 {0..1} ;
+
+#name"企業名"
+#"取得したサイトに記載された企業名を記述するプロパティ用語"
+#description@en "A name of the company"
+set ic:企業情報>ic:企業名 {0..n} ;
+
+#name"
+
+
+#name"住所"
+#" 取得サイトに記載された企業住所を記述するクラス用語"
+#name@en "Address"
+#description@en "A class term to express an address."
+class ic:住所型 {@ic:事物型} ;
+
+#name "郵便番号"	
+# "郵便番号を記述するためのプロパティ用語　※0-9の数字7桁"	
+set ic:住所型>ic:郵便番号 {0..1} ;	
+
+#name "住所"
+# "住所を記述するためのプロパティ用語　※法人番号サイトから取得したデータ"
+set ic:住所型>ic:住所 {0..1} ;
+
+#name "電話番号"
+# "電話番号を記述するためのプロパティ用語　※0-9の数字のみ"
+set ic:連絡先型>ic:電話番号 {0..ｎ} ;
+
+#name "法人番号"
+# "法人番号を記述するためのプロパティ用語
+set ic:識別値>ic:法人番号 {0..1} ;
