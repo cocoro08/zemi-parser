@@ -1,0 +1,30 @@
+[
+  {
+    "prefix": "ic",
+    "name": "動物型",
+    "type": "class",
+    "restriction": [
+      {
+        "prefix": "ic",
+        "name": "生物型",
+        "type": "type"
+      }
+    ],
+    "metadata": [
+      {
+        "type": "description",
+        "data": "動物の情報を表現するためのクラス用語"
+      },
+      {
+        "type": "name",
+        "data": "Animal",
+        "language": "en"
+      },
+      {
+        "type": "description",
+        "data": "A class term to express information of an animal.",
+        "language": "en"
+      }
+    ]
+  }
+]

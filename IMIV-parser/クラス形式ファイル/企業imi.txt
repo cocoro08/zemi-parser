@@ -1,0 +1,7 @@
+#name "企業情報"
+#"企業の基本情報を表すクラス"
+#descripton@en "company topic"
+class ic:企業情報>ic:{@ic:実体型} ;
+
+#name"企業名"
+
