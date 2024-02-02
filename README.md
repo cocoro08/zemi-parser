@@ -1,6 +1,7 @@
 # imiv-parser
 
 ここにあるファイルをすべてダウンロードしてください
+macOSとubuntuでは動作確認済み
 
 ## imiv-parser-masterに移動
 
