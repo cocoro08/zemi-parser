@@ -2,6 +2,12 @@
 
 ここにあるファイルをすべてダウンロードしてください
 
+## imiv-parser-masterに移動
+
+```
+cd imiv-parser-master
+```
+
 ## npm
 
 ```
