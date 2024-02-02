@@ -1,22 +1,81 @@
-# zemi-parser
-ゼミの作業ファイル
+# imiv-parser
 
-**imiv形式で書いたテキストファイルは、imiv-parser< クラス形式ファイルの中に保存してください。**
+ここにあるファイルをすべてダウンロードしてください
+
+## npm
+
+```
+npm install imiv-parser
+```
+
+## 実行するTXTファイルの作成
+```
+touch index.txt
+```
+例
+```
+#name "競馬"
+#"競馬を表す単語"
+class ic:競馬型;
+
+#name "重賞"
+#"レースを表す単語"
+set ic:競馬型>ic:重賞型;
+
+#name "レース名"
+#"レース名を表す単語"
+set ic:競馬型>ic:レース名型;
+```
 
 
-[imiv形式の書き方さんこうURL]
-https://imi.go.jp/ns/core/242/imicore242.imiv
+
+## 実行するためのJSファイルの作成
+
+```
+touch index.js
+```
+
+作成したindex.jsに下記コードこコピペ
+```
+const fs = require('fs');
+const IMIVParser = require('imiv-parser');
+
+// RDF Schemaのテキストファイルのパス
+const filePath = 'aaa';  // ファイルの実際のパスに置き換えてください
+
+// ファイルを読み込んでIMIVパーサーに渡す
+fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+        console.error('Error reading the file:', err);
+        return;
+    }
+
+    // IMIVパーサーを実行して結果を表示
+    const result = IMIVParser.parse(data);
+    console.log(JSON.stringify(result, null, 2));
+    
+    const resultFilePath = 'parsedResult.json';
+    fs.writeFileSync(resultFilePath, JSON.stringify(result, null, 2));
+
+
+});
+```
+
+## 実行結果を保存するためのJSONファイルを作成
+
+```
+touch parsedResult.json
+```
+
+## 実行
+
+```
+node index.js
+```
+
+実行するとターミナルとparsedResult.jsonに結果が表示されます
 
 
 
-#name "人型"
-# "人の情報を表現するためのクラス用語"
-#name@en "Person"
-#description@en "A class term to express information of a person."
-class ic:人型 {@ic:実体型} ;
 
 
-#name "氏名"
-# "氏名を記述するためのプロパティ用語"
-#description@en "A name of the person."
-set ic:人型>ic:氏名 {0..n} ;
