@@ -18,6 +18,7 @@ npm install imiv-parser
 ```
 
 ## 実行するTXTファイルの作成
+imivparserを利用するにはIMIV形式に沿ったテキストファイルを作成してくだい
 ```
 touch index.txt
 ```
@@ -40,11 +41,12 @@ set ic:競馬型>ic:レース名型;
 
 ## 実行するためのJSファイルの作成
 
+
 ```
 touch index.js
 ```
 
-作成したindex.jsに下記コードをコピペ
+作成したindex.jsに下記コードをコピペしてください
 ```
 const fs = require('fs');
 const IMIVParser = require('imiv-parser');
