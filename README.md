@@ -70,6 +70,14 @@ fs.readFile(filePath, 'utf8', (err, data) => {
 
 
 });
+
+```
+IMIVParser
+
+```
+IMIVParser.parse()で機能呼び出し
+
+parse()の中にIMIテキストを引数にする
 ```
 
 ## 実行結果を保存するためのJSONファイルを作成
