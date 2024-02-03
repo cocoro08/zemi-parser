@@ -2,13 +2,13 @@
 
 ここにあるファイルをすべてダウンロードしてください
 
-macOSとubuntuでは動作確認済み
+macOS14.1とubuntu22.04では動作確認済み
 
-## imiv-parser-masterに移動
+# imiv-parser-masterに移動
 
-```
-cd imiv-parser-master
-```
+## 実行するためにnodeバージョン
+最新版を使用してください
+
 
 ## npm
 
@@ -43,7 +43,7 @@ set ic:競馬型>ic:レース名型;
 touch index.js
 ```
 
-作成したindex.jsに下記コードこコピペ
+作成したindex.jsに下記コードをコピペ
 ```
 const fs = require('fs');
 const IMIVParser = require('imiv-parser');
