@@ -1,17 +1,17 @@
 #name "企業情報"
 #"企業の基本情報を表すクラス"
 #descripton@en "company topic"
-class ic:企業情報>ic:{@ic:実体型} ;
-
+class ic:企業情報{@ic:実体型} ;
 #name"正規企業名"
 #" 国税庁法人番号公表サイトで登録されている企業名を記述するプロパティ用語"
 #description@en"A name of Corporate Number Publication Site company"
-set ic:企業情報>ic:企業名 {0..1} ;
+set ic:企業情報>ic:正規企業名 {0..1} ;
 
 #name"企業名"
 #"取得したサイトに記載された企業名を記述するプロパティ用語"
 #description@en "A name of the company"
 set ic:企業情報>ic:企業名 {0..n} ;
+
 
 #name"住所"
 #"企業住所を記述するプロパティ用語"
@@ -22,20 +22,6 @@ set ic:企業情報>ic:住所 {0..n};
 #"連絡先を記述するプロパティ用語"
 set ic:企業情報>ic:連絡先 {0..n};
 
-#name"情報取得先"
-#企業情報の取得先を記述するプロパティ用語
-#description@en"get a information"
-set ic:企業情報>ic:取得先情報 {0..n};
-
-
-#name"情報取得先番号"
-#企業情報の取得先サイトの識別番号を記述するプロパティ用語
-#description@en""
-set ic:企業情報>情報取得先番号{0..n};
-
-#name"連絡先"
-#"企業の連絡先を記述するクラス用語"
-class ic:連絡先 {@ic:事物型};
 
 
 #name"住所"
@@ -44,3 +30,7 @@ class ic:連絡先 {@ic:事物型};
 #description@en "A class term to express an address."
 class ic:住所型 {@ic:事物型} ;
 
+#name"情報取得先番号"
+#"企業情報の取得先サイトの識別番号を記述するプロパティ用語"
+#description@en "aaaa"
+set ic:企業情報>ic:情報取得先番号{0..n};
