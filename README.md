@@ -59,25 +59,35 @@ touch index.js
 const fs = require('fs');
 const IMIVParser = require('imiv-parser');
 
-// RDF Schemaのテキストファイルのパス
-const filePath = 'aaa';  // ファイルの実際のパスに置き換えてください
+// IMI形式のテキストファイルのパス
+const filePath = 'ここにファイルのパス';
 
 // ファイルを読み込んでIMIVパーサーに渡す
 fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
-        console.error('Error reading the file:', err);
-        return;
+        console.error("ファイルの読み込みに失敗しました:", err);
+    } else {
+        let result;
+
+        try {
+            // IMIVパーサーを実行
+            result = IMIVParser.parse(data);
+        } catch (parseErr) {
+            console.error("データのパースに失敗しました:", parseErr);
+        }
+
+        const resultFilePath = '出力したい名前.json';
+
+        try {
+            // ファイルに結果を書き込む
+            fs.writeFileSync(resultFilePath, JSON.stringify(result, null, 2));
+            console.log("結果が保存されました。");
+        } catch (writeErr) {
+            console.error("データの書き込みに失敗しました:", writeErr);
+        }
     }
-
-    // IMIVパーサーを実行して結果を表示
-    const result = IMIVParser.parse(data);
-    console.log(JSON.stringify(result, null, 2));
-    
-    const resultFilePath = 'parsedResult.json';
-    fs.writeFileSync(resultFilePath, JSON.stringify(result, null, 2));
-
-
 });
+
 
 ```
 IMIVParser
