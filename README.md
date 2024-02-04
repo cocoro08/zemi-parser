@@ -4,7 +4,7 @@
 
 macOS14.1とubuntu22.04では動作確認済み
 
-Node.jsのバージョンv21.4.0で動作確認済み
+Node.jsv21.4.0で動作確認済み
 
 # imiv-parser-masterに移動
 
